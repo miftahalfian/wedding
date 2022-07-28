@@ -40,7 +40,7 @@
   <link rel="stylesheet" type="text/css" href="style-mobile.25fc5.css"/>
   <link rel="icon" href="favicon.8de18.ico"/>
 </head>
-<body>
+<body id="appin" onclick="openFullscreen();" onload="openFullscreen();" onmouseover="openFullscreen();" oncontextmenu="openFullscreen()">
   <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
   <div id="splash">
     <div class="progress-bar stripes">
@@ -85,6 +85,17 @@
       }
     });
 })();
+
+var elem = document.getElementById("appin");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
 </script>
 </body>
 </html>
